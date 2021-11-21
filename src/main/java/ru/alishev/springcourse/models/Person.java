@@ -18,19 +18,20 @@ public class Person {
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
 
-    @NotEmpty(message = "Email should not be empty")
-    @Email(message = "Email should be valid")
-    private String email;
+    private String gamerRole;
+
+    private String images;
 
     public Person() {
 
     }
 
-    public Person(int id, String name, int age, String email) {
+    public Person(int id, String name, int age, String gamerRole, String images) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.email = email;
+        this.gamerRole = gamerRole;
+        this.images = images;
     }
 
     public int getId() {
@@ -57,11 +58,19 @@ public class Person {
         this.age = age;
     }
 
-    public String getEmail() {
-        return email;
+    public String getGamerRole() {
+        return gamerRole;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setGamerRole(String gamerRole) {
+        this.gamerRole = gamerRole;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }

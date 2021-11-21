@@ -1,4 +1,15 @@
-a {
-    color: red;
+.gamer {
+    color: blue;
     font-size: 24pt;
+    text-align: left;
+    border: 1px solid red;
+}
+
+/*a {*/
+/*    border: 1px solid red;*/
+/*}*/
+
+#gamerRole{
+    color: cadetblue;
+    font-size: 12pt;
 }

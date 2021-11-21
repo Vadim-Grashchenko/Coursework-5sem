@@ -31,22 +31,9 @@ public class MySpringMvcDispatcherSerlvetIntitializer extends AbstractAnnotation
     }
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.register(SpringConfig.class, WebConfig.class);
-        context.setServletContext(servletContext);
-
-        ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
-        dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/");
-
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding("UTF-8");
-        characterEncodingFilter.setForceEncoding(true);
-
-        FilterRegistration.Dynamic filterRegistration = servletContext
-                .addFilter("characterEncodingFilter", characterEncodingFilter);
-        filterRegistration.addMappingForUrlPatterns(null, false, "/*");
+    public void onStartup(ServletContext aServletContext) throws ServletException {
+        super.onStartup(aServletContext);
+        registerHiddenFieldFilter(aServletContext);
     }
 
     private void registerHiddenFieldFilter(ServletContext aContext) {

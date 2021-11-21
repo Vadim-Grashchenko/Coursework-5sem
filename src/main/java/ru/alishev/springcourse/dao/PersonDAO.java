@@ -47,8 +47,9 @@ public class PersonDAO {
 
             person.setId(resultSet.getInt("id"));
             person.setName(resultSet.getString("name"));
-            person.setEmail(resultSet.getString("email"));
             person.setAge(resultSet.getInt("age"));
+            person.setGamerRole(resultSet.getString("gamerRole"));
+            person.setImages(resultSet.getString("images"));
 
             people.add(person);
         }
@@ -74,7 +75,6 @@ public class PersonDAO {
 
             person.setId(resultSet.getInt("id"));
             person.setName(resultSet.getString("name"));
-            person.setEmail(resultSet.getString("email"));
             person.setAge(resultSet.getInt("age"));
         return person;
     }
@@ -87,7 +87,6 @@ public class PersonDAO {
 
             preparedStatement.setString(1, person.getName());
             preparedStatement.setInt(2, person.getAge());
-            preparedStatement.setString(3, person.getEmail());
 
             preparedStatement.executeUpdate();
         }
@@ -95,12 +94,11 @@ public class PersonDAO {
     public void update(int id, Person updatedPerson) throws SQLException {
 
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("UPDATE person SET name=?, age=?, email=? WHERE id=?");
+                    connection.prepareStatement("UPDATE person SET name=?, age=? WHERE id=?");
 
             preparedStatement.setString(1, updatedPerson.getName());
             preparedStatement.setInt(2, updatedPerson.getAge());
-            preparedStatement.setString(3, updatedPerson.getEmail());
-            preparedStatement.setInt(4, id);
+            preparedStatement.setInt(3, id);
 
             preparedStatement.executeUpdate();
 
