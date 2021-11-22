@@ -1,15 +1,35 @@
-.gamer {
-    color: blue;
-    font-size: 24pt;
-    text-align: left;
-    border: 1px solid red;
+body {
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
-/*a {*/
-/*    border: 1px solid red;*/
-/*}*/
+.gamer {
+    float: left;
+    width: 400px;
+}
 
-#gamerRole{
-    color: cadetblue;
-    font-size: 12pt;
+#gamerRole {
+    position: relative;
+    left: 210px;
+}
+
+#name {
+    position: relative;
+    left: 210px;
+    font-size: 18px;
+}
+
+#face {
+    position: relative;
+    bottom: 100px;
+    border-radius: 60px;
+}
+
+#age {
+    position: relative;
+    left: 210px;
+}
+
+a {
+    text-decoration: none;
 }

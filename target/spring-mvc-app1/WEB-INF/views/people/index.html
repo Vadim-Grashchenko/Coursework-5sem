@@ -7,16 +7,17 @@
 </head>
 <body>
 <div class="gamer" th:each="person : ${people}">
-    <a th:href="@{/people/{id}(id=${person.getId()})}"
-       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
-    <p><img src="20210514215903.jpg"></p>
-    <p id="gamerRole" th:text="${person.getGamerRole()}">gamerRole</p>
-</div>
 
-<br/>
+    <a id="name"  th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName()}">user</a>
+    <p id="age" th:text="'Age: ' + ${person.getAge()}">age</p>
+    <p id="gamerRole" th:text="'Amplua: ' + ${person.getGamerRole()}">gamerRole</p>
+    <p><img id="face" th:src="${person.getImages()}"></p>
+
+</div>
 <hr/>
 
-<a href="/spring_jdbc_template_war_exploded/people/new">Create new person</a>
+<!--<p><a href="/spring_jdbc_template_war_exploded/people/new">Create new person</a></p>-->
 
 </body>
 </html>
